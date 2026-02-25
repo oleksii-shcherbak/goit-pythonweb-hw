@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Messages</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/"><img src="/logo.png" alt="Logo" /></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/message">Send Message</a>
+        <a href="/read">Read Messages</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Saved Messages</h1>
+
+      {% if messages %}
+        <table>
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Username</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for timestamp, entry in messages.items() %}
+              <tr>
+                <td>{{ timestamp }}</td>
+                <td>{{ entry.username }}</td>
+                <td>{{ entry.message }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p>No messages yet. <a href="/message">Send the first one!</a></p>
+      {% endif %}
+    </main>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+[project]
+name = "goit-pythonweb-hw-06"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "sqlalchemy>=2.0.36",
+    "alembic>=1.14.0",
+    "psycopg2-binary>=2.9.10",
+    "faker>=33.1.0",
+    "python-dotenv>=1.0.1",
+]
+
+[tool.uv]
+dev-dependencies = []
